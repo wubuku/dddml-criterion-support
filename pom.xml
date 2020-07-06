@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.dddml</groupId>
+    <artifactId>dddml-criterion-support</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>dddml-criterion-support</name>
+    <url>http://www.dddml.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/com.github.drapostolos/type-parser -->
+        <dependency>
+            <groupId>com.github.drapostolos</groupId>
+            <artifactId>type-parser</artifactId>
+            <version>0.6.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.strategicgains/DateAdapterJ -->
+        <dependency>
+            <groupId>com.strategicgains</groupId>
+            <artifactId>DateAdapterJ</artifactId>
+            <version>1.1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>maven-snapshots</id>
+            <url>http://47.105.144.230:8081/repository/maven-snapshots</url>
+        </repository>
+    </distributionManagement>
+
+</project>
