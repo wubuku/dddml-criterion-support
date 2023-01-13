@@ -51,7 +51,7 @@
     <distributionManagement>
         <repository>
             <id>qingdao-snapshots</id>
-            <url>http://47.105.144.230:8081/repository/maven-snapshots</url>
+            <url>http://my-nexus:8081/repository/maven-snapshots</url>
         </repository>
     </distributionManagement>
 
