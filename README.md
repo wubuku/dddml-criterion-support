@@ -1,5 +1,57 @@
 # DDDML Criterion Support
 
+## How to use
+
+### Maven
+
+Add the following dependency to the project's `pom.xml` file.
+
+```xml
+<dependencies>
+    <!-- ... -->
+    <dependency>
+        <groupId>org.dddml</groupId>
+        <artifactId>dddml-criterion-support</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    <!-- ... -->
+</dependencies>
+
+<repositories>
+    <!-- ... -->
+    <repository>
+        <id>dddml-criterion-support-github</id>
+        <name>dddml-criterion-support-bot</name>
+        <url>https://maven.pkg.github.com/wubuku/dddml-criterion-support</url>
+    </repository>
+    <!-- ... -->
+</repositories>
+```
+
+Add the following code to maven's `settings.xml` file.
+
+```xml
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <!-- ... -->
+    <servers>
+        <!-- ... -->
+        <server>
+            <id>dddml-criterion-support-github</id>
+            <username>dddml-criterion-support-bot</username>
+            <password>&#103;hp_ingMUw3mymbGKI5joAPVFwTgU3bXo02hnZvX</password>
+        </server>
+        <!-- ... -->
+    </servers>
+    <!-- ... -->
+</settings>
+```
+
+---
+
+
 ## 上传 Maven 构件的说明
 
 ### 配置工程的 pom.xml 文件
@@ -19,6 +71,7 @@
     </repository>
 </distributionManagement>
 ```
+
 配置了两个分发构件的仓库，snapshotRepository 表示快照版本的仓库，repository 表示 release 版本的仓库。它们包含两个子节点：`id` `url`，id 为仓库的标识，url 是私服的仓库地址。
 
 ### 配置 settings.xml 文件
@@ -76,7 +129,7 @@
 </settings>
 ```
 
-` settings.xml` 中每一个 server 的 id 对应 `pom.xml` 中的 distributionManagement 中的 repository 的id。username 和 password 表示访问仓库的用户名和密码。
+`settings.xml` 中每一个 server 的 id 对应 `pom.xml` 中的 distributionManagement 中的 repository 的 id。username 和 password 表示访问仓库的用户名和密码。
 
 filePermissions 和 directoryPermissions 表示构件上传到仓库中，对构件文件和目录设置什么样的权限。另外 pom.xml 不支持配置用户名和密码的原因是由于 pom.xml 文件是需要对外发布的，而用户名密码这些信息较为敏感不适合发布在网络上，因此 pom.xml 并不支持配置 username 和 password 。
 

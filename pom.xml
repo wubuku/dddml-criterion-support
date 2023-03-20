@@ -50,8 +50,9 @@
 
     <distributionManagement>
         <repository>
-            <id>qingdao-snapshots</id>
-            <url>http://my-nexus:8081/repository/maven-snapshots</url>
+            <id>dddml-criterion-support-github</id>
+            <name>My GitHub Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/wubuku/dddml-criterion-support</url>
         </repository>
     </distributionManagement>
 
